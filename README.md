@@ -6,11 +6,10 @@ Simulator: ngspice (generation environment recorded as ngspice-42 in ngspice_ver
 
 | Level | Benchmark Metric | v1 Baseline | Verified v2 Upgrade | Reference CSV Deliverable |
 |---|---|---|---|---|
-| **Transistor** | nmos_on Test Median (id / ig / is / ib) | 12.30% / 6.21% / 12.69% / 3.61% | **4.45% / 1.44% / 5.06% / 0.90%** | `results/PartA_transistor/test_chosen.csv` |
-| **Transistor** | nmos_off Test Median (id / ig / is / ib) | 2.03% / 0.00% / 2.85% / 0.84% | **1.23% / 0.00% / 2.52% / 0.92%** | `results/PartA_transistor/test_chosen.csv` |
-| **Transistor** | pmos_on Test Median (id / ig / is / ib) | 14.00% / 4.79% / 13.66% / 4.26% | **5.39% / 1.25% / 6.09% / 0.94%** | `results/PartA_transistor/test_chosen.csv` |
-| **Transistor** | pmos_off Test Median (id / ig / is / ib) | 3.22% / 2.08% / 3.41% / 1.14% | **1.52% / 2.08% / 1.75% / 1.03%** | `results/PartA_transistor/test_chosen.csv` |
-| **Transistor** | Test $R^2$ (symlog space, all 4 cases) | 0.9982 – 0.9993 | **0.9983 – 0.9998** | `results/PartA_transistor/test_chosen.csv` |
+| **Transistor** | NMOS ON Validation Median (id / ig / is / ib) | 12.54% / 6.54% / 12.87% / 3.56% | **4.42% / 1.54% / 5.23% / 0.95%** | `results/PartA_transistor/new_vs_old_validation.csv` |
+| **Transistor** | NMOS OFF Validation Median (id / ig / is / ib) | 2.04% / 0.00% / 3.08% / 0.82% | **1.34% / 0.00% / 2.50% / 0.85%** | `results/PartA_transistor/new_vs_old_validation.csv` |
+| **Transistor** | PMOS ON Validation Median (id / ig / is / ib) | 13.73% / 5.08% / 13.15% / 4.19% | **5.07% / 1.27% / 6.14% / 0.91%** | `results/PartA_transistor/new_vs_old_validation.csv` |
+| **Transistor** | PMOS OFF Validation Median (id / ig / is / ib) | 3.09% / 2.12% / 3.23% / 1.08% | **1.52% / 2.12% / 1.84% / 0.96%** | `results/PartA_transistor/new_vs_old_validation.csv` |
 | **Gates** | SPICE node V: Mean Accuracy | 96.72% | **99.28%** (med 0.51%, p95 1.98%, max 12.8%) | `results/PartB_gates/gate_results.csv` |
 | **Gates** | ML-solved node V: Mean Accuracy | 96.47% | **99.25%** (med 0.53%, p95 2.08%) | `results/PartB_gates/gate_node_results.csv` |
 | **Circuit** | Fully-ML (ML-solved V): Mean Accuracy | 97.28% | **99.46%** (med 0.43%, p95 1.57%, max 4.0%) | `results/PartC_parity_checker/circuit_results.csv` |
