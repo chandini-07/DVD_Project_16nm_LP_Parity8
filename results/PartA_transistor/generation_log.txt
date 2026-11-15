@@ -1,0 +1,4 @@
+nmos_on: rows=10000 simulated=10205 failed=0 time=41s
+nmos_off: rows=10000 simulated=10205 failed=0 time=48s
+pmos_on: rows=10000 simulated=10205 failed=0 time=43s
+pmos_off: rows=10000 simulated=10205 failed=0 time=48s

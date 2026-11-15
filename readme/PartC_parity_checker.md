@@ -1,0 +1,5 @@
+# Part C: 8-bit parity checker
+XOR tree: 7 XOR2, each 4 NAND2 (28 NAND2, 112 transistors). 256 input vectors x 200 corners = 51,200 SPICE runs; ML = sum of the Part B NAND2 gate-model leakages.
+Inter-gate loading difference (comparing sum of isolated NAND2 SPICE leakages against full coupled circuit SPICE): median 0.013%, p95 0.061%, maximum 0.163%. These loading results apply specifically to the tested static CMOS DC steady-state circuit and should not be generalized to every circuit topology (such as pass-transistor logic, high-fanout dynamic circuits, or layouts with significant wire parasitics).
+Result: circuit-level mean accuracy is 97.28% (2.35% median error, 6.38% 95th percentile) across 51,200 evaluations. Circuit-level accuracy exceeding individual gate-level accuracy (96.5%–96.7%) is associated with both NAND2-only composition (NAND2 achieves higher intrinsic accuracy than NOR2/INV) and partial error cancellation across the 28 constituent gates.
+Results: results/PartC_parity_checker, plot: plots/PartC_parity_checker/circuit_parity.png.
