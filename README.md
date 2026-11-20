@@ -31,7 +31,7 @@ Target set in project brief: *"up to 99% mean accuracy"*. Achieved: **99.46%** (
 7. **Numerical Noise & Residuals:** NMOS OFF $I_g$ 95th-percentile relative error is large but numerically zero in absolute terms ($\le 1.6 \times 10^{-5}\text{ A}$ relative to $10^{-15}\text{ A}$ floor; currents are $\sim 10^{-18}\text{ A}$). Kirchhoff relative residuals exceed tolerance only at the numerical noise floor ($\sim 10^{-15}\text{ A}$).
 8. **Engineering Assumptions without TA Confirmation:** (a) Gate oxide thicknesses `toxp` and `toxm` were not varied independently and remain fixed to nominal model card values; (b) total leakage is defined as net current supplied by $V_{DD}$ sources; (c) parity checker logic polarity convention (even parity = 0, odd parity = 1).
 9. **Metric Conventions:** $R^2$ is evaluated in symmetric logarithmic space ($T(I) = \operatorname{sign}(I)\log_{10}(1 + |I|/10^{-15})$). Relative errors in Amperes use a numerical noise floor of $10^{-15}\text{ A}$.
-10. **Simulator Consistency:** ngspice-42 is recorded in `ngspice_version.txt`; ngspice-43 installed locally at `/usr/local/bin/ngspice` was verified to produce bit-identical results on all 36 test netlists.
+10. **Simulator Consistency:** ngspice-42 is recorded in `ngspice_version.txt`; ngspice-43 installed locally at `/usr/local/bin/ngspice` was verified to produce identical currents on the four single-transistor example netlists.
 11. **Inter-Gate Electrical Loading:** The hierarchical composition assumes negligible inter-gate electrical loading in static DC steady state, which is verified by standalone gate SPICE summation reproducing full-circuit SPICE to 99.98% accuracy.
 12. **Execution Note:** A complete from-scratch re-simulation pipeline run (~1.5 hours) was NOT executed during this upgrade; the verified model package was adopted and evaluated with single-pass verification.
 
@@ -63,7 +63,7 @@ Target set in project brief: *"up to 99% mean accuracy"*. Achieved: **99.46%** (
 
 - **Canonical runner:** `regenerate_code/run_all.sh` is the canonical pipeline runner.
 - **Root execution wrapper:** The root `./run_all.sh` delegates all arguments directly to the canonical runner (`./run_all.sh --verify-only` for non-destructive verification, `./run_all.sh --force-full` for full regeneration).
-- **Canonical script package:** `regenerate_code/scripts/` is the canonical, integrated, fully tested executable script package. All pipeline stages execute strictly from this directory.
+- **Canonical script package:** `regenerate_code/scripts/` is the canonical, integrated executable script package (verify-only checks and evaluation scripts were run; a full clean regeneration was not run). All pipeline stages execute strictly from this directory.
 - **Reference catalog (`scripts/`):** The root `scripts/` directory is an archival reference catalog organized by assignment part for inspection only. It is **NOT independently runnable** (due to part-specific subdirectories and shared module dependencies). Users must not execute or modify the modular tree as the canonical implementation.
 
 ## Standalone Stage Execution and Dependencies
